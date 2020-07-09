@@ -1,9 +1,7 @@
-mport socket
+import socket
 import Queue
-from threading
-import Thread
-from collections
-import Counter
+from threading import Thread
+from collections import Counter
 
 q1 = Queue.Queue()
 co = Counter()
