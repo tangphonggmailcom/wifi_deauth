@@ -18,4 +18,4 @@ def callback(frame):
       print "deauth attack from adress {} to {}".format(source, recipient)
       detected[recipient]['quantity'] = delay
  
-sniff(iface='wlp5s0', prn=callback)
+sniff(iface='wlan0', prn=callback)
