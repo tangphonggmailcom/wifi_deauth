@@ -14,7 +14,7 @@ def callback(frame):
         channel = int(channel.encode('hex'), 16)
         print "Beacon >> SSID: '{}', BSSID: {}, channel: {}".format(ssid, source, channel)
         known[source]=True
-    elseif frame.haslayer(Dot11ProbeResp):
+    elif frame.haslayer(Dot11ProbeResp):
       source=frame[Dot11].addr2
       if source not in known:
         ssid = frame[Dot11Elt][0].info
