@@ -10,6 +10,7 @@ def callback(frame):
     recipient = frame[Dot11].addr1
     source = frame[Dot11].addr2
  
-    print "{} deauth attack from adress {} to {}".format(time.time(), source, recipient)
- 
+    print "{} deauth attack from {} to {}".format(time.time(), source, recipient)
+
+print "Detecting deauth frame..."
 sniff(iface=interface, prn=callback)
