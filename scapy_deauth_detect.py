@@ -1,5 +1,6 @@
 from scapy.all import *
- 
+
+interface = 'wlan0'
 detected = {}
 expiration = 60
 delay = -256
@@ -18,4 +19,4 @@ def callback(frame):
       print "deauth attack from adress {} to {}".format(source, recipient)
       detected[recipient]['quantity'] = delay
  
-sniff(iface='wlan0', prn=callback)
+sniff(iface=interface, prn=callback)
