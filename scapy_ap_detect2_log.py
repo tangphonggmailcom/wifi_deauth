@@ -20,7 +20,8 @@ def callback(frame):
         ssid = frame[Dot11Elt][0].info
         channel = frame[Dot11Elt][2].info
         channel = int(channel.encode('hex'), 16)
-        print "Probe reponse >> SSID: '{}', BSSID: {}, channel: {}".format(ssid, source, channel)
+        dest=frame[Dot11].addr1
+        print "Probe reponse >> SSID: '{}', BSSID: {}, channel: {}, MAC: {}".format(ssid, source, channel, dest)
         known[source]=True
 
 print "Detecting unknown access point..."
